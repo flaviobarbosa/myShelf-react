@@ -2,7 +2,7 @@ import React from 'react';
 
 import { InputText } from 'primereact/inputtext';
 
-interface InputProps {
+interface InputProps extends React.ComponentProps<'input'> {
   id: string;
   label?: string;
   placeholder?: string;
