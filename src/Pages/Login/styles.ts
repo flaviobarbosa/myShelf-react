@@ -1,21 +1,30 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background-color: var(--primary-color-text);
+  background-color: var(--primary-color);
+  color: var(--primary-color-text);
+
+  display: grid;
+  place-content: center;
+
+  min-height: 100vh;
+`;
+
+export const Form = styled.form`
   color: var(--primary-color);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.03), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.12);
+  background-color: var(--primary-color-text);
+
+  min-height: 30vh;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  min-height: 50vh;
-  min-width: 30vw;
-
   border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.03), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.12);
 
-  padding: 3rem;
+   padding: 3rem;
 
   div {
     margin: 0.5rem 1rem;
@@ -24,6 +33,7 @@ export const Container = styled.div`
   button {
     margin-top: 1.5rem;
   }
+
 `;
 
 export const Header = styled.h1`

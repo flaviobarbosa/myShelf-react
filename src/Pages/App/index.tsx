@@ -1,17 +1,19 @@
-import React from 'react';
 import { Container } from './styles';
 
-import { Login } from '../Login';
-import { SignUp } from '../SignUp';
+import { Outlet, Link } from 'react-router-dom';
 
 export function App() {
-
   return (
     <Container className='bg-primary'>
 
       {/* <Login /> */}
-      <SignUp />
+      {/* <SignUp /> */}
+      Here is the app!
 
+      <Link to='/login'>Login</Link>
+      <Link to='/signup'>Signup</Link>
+
+      <Outlet />
     </Container>
   );
 }
