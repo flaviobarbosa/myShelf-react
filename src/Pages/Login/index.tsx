@@ -9,7 +9,7 @@ export function Login() {
       <Header>MyShelf</Header>
 
       <Input id="email" placeholder="your email" icon="envelope" />
-      <Input id="password" placeholder='your password' icon='lock'/>
+      <Input id="password" type="password" placeholder='your password' icon='lock'/>
 
       <Button label="SIGN IN" />
 

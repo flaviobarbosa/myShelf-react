@@ -7,9 +7,10 @@ interface InputProps extends React.ComponentProps<'input'> {
   label?: string;
   placeholder?: string;
   icon?: string;
+  type?: string;
 }
 
-export function Input({id, label, placeholder, icon}: InputProps) {
+export function Input({id, label, placeholder, icon, type}: InputProps) {
 
   return (
     <div>
@@ -19,7 +20,7 @@ export function Input({id, label, placeholder, icon}: InputProps) {
         (
           <span className="p-input-icon-left w-full">
             <i className={`pi pi-${icon}`} />
-            <InputText id={id} placeholder={placeholder} aria-describedby={`${id}-help`} className="block w-full" />
+            <InputText id={id} type={type ? type : 'text'} placeholder={placeholder} aria-describedby={`${id}-help`} className="block w-full" />
           </span>
         )
         :

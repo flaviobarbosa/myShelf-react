@@ -34,6 +34,7 @@ export function SignUp() {
       />
 
       <Input
+        type="password"
         id="password"
         placeholder='your password'
         icon='lock'
