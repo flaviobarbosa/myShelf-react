@@ -1,4 +1,7 @@
-import React, {useState} from 'react';
+import { useState } from 'react';
+
+import { Link } from 'react-router-dom';
+
 import { Button } from 'primereact/button';
 import { Input } from '../../Components/Input';
 import { Container, Form, Header, Footer } from './styles';
@@ -46,7 +49,7 @@ export function SignUp() {
 
         <Button label="CREATE MY ACCOUNT" type='submit' />
 
-        <Footer>Already have an account? <span>Sign in</span>!</Footer>
+        <Footer>Already have an account? <span><Link to='/login'>Sign in</Link></span>!</Footer>
       </Form>
     </Container>
   );
