@@ -33,18 +33,3 @@ export function signUp({name, email, password}: SignUpProps) {
     });
 }
 
-interface LoginProps {
-  email: string;
-  password: string;
-}
-
-export function login({ email, password }: LoginProps) {
-  api.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${firebaseApiKey}`, {
-    email,
-    password,
-    returnSecureToken: true
-  })
-    .then(response => {
-      console.log(response.data);
-    });
-}

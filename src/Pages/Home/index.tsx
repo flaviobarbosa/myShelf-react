@@ -3,5 +3,9 @@ import { useAuth } from '../../hooks/useAuth';
 export const Home = () => {
   const { user } = useAuth();
 
-  return <h1>Home - Protected route</h1>;
+  return (
+    <>
+      <h2>Welcome, {user?.displayName}</h2>
+    </>
+  );
 };
