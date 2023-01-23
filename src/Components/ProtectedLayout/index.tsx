@@ -10,7 +10,7 @@ export const ProtectedLayout = () => {
 
   return (
     <>
-      <Button label="LOGOUT" onClick={logout} />
+      <Button label="LOGOUT" onClick={logout} style={{ backgroundColor: '#fff', color: 'var(--primary-color)'}} />
       <Outlet />
     </>
   );
