@@ -5,13 +5,10 @@ import { RouterProvider } from 'react-router-dom';
 
 import './index.css';
 
-
 import 'primereact/resources/themes/lara-light-indigo/theme.css';  //theme
 import 'primereact/resources/primereact.min.css';                  //core css
 import 'primeicons/primeicons.css';                                //icons
-
-import { router } from './routes';
-
+import { router } from './Pages/App';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

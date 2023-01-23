@@ -5,16 +5,19 @@ import { Link } from 'react-router-dom';
 import { Button } from 'primereact/button';
 import { Input } from '../../Components/Input';
 import { Container, Footer, Header, Form } from './styles';
-import { login } from '../../utils/api';
+import { useAuth } from '../../hooks/useAuth';
+import { AuthProvider } from '../../contexts/authContext';
 
-export function Login() {
+function LoginAuthProvider() {
 
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
+  const { signIn } = useAuth();
+
   async function handleLogin(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    login({email, password});
+    signIn(email, password);
   }
 
   return (
@@ -44,5 +47,13 @@ export function Login() {
         <Footer>Don't have an account? <span><Link to='/signup'>Sign up</Link></span>!</Footer>
       </Form>
     </Container>
+  );
+}
+
+export function Login() {
+  return (
+    <AuthProvider>
+      <LoginAuthProvider />
+    </AuthProvider>
   );
 }

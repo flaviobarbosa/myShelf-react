@@ -1,20 +1,24 @@
-import { Container } from './styles';
+import { Login } from '../Login';
+import { AuthLayout } from '../../Components/AuthLayout';
+import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+import { Landpage } from '../Landpage';
+import { ProtectedLayout } from '../../Components/ProtectedLayout';
+import { Home } from '../Home';
+import { PublicLayout } from '../../Components/PublicLayout';
+import { SignUp } from '../SignUp';
 
-import { Outlet, Link } from 'react-router-dom';
 
-export function App() {
-  return (
-    <Container className='bg-primary'>
-
-      {/* <Login /> */}
-      {/* <SignUp /> */}
-      Here is the app!
-
-      <Link to='/login'>Login</Link>
-      <Link to='/signup'>Signup</Link>
-
-      <Outlet />
-    </Container>
-  );
-}
-
+export const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route element={<AuthLayout />}>
+      <Route element={<PublicLayout />}>
+        <Route path='/' element={<Landpage />}></Route>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/signup' element={<SignUp />}></Route>
+      </Route>
+      <Route element={<ProtectedLayout />}>
+        <Route path='/home' element={<Home />}></Route>
+      </Route>
+    </Route>
+  )
+);

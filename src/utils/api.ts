@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const firebaseApiKey = import.meta.env.VITE_FIREBASE_API_KEY;
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: 'https://identitytoolkit.googleapis.com/v1',
 });
 
