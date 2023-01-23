@@ -16,6 +16,7 @@ interface UserProps {
 interface AuthContextProps {
   user: UserProps | null;
   signIn: (email: string, password: string) => Promise<void>;
+  logout: () => void;
 }
 
 interface AuthProviderProps {
@@ -63,8 +64,13 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       });
   };
 
+  const logout = () => {
+    setUser(null);
+    localStorage.removeItem(LOCALSTORAGE_USER);
+  };
+
   return (
-    <AuthContext.Provider value={{ user, signIn }}>
+    <AuthContext.Provider value={{ user, signIn, logout }}>
       {children}
     </AuthContext.Provider>
   );

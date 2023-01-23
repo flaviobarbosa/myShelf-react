@@ -1,11 +1,17 @@
+import { Button } from 'primereact/button';
 import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 
 export const ProtectedLayout = () => {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
 
   if (!user)
     return <Navigate to='/' />;
 
-  return <Outlet />;
+  return (
+    <>
+      <Button label="LOGOUT" onClick={logout} />
+      <Outlet />
+    </>
+  );
 };
