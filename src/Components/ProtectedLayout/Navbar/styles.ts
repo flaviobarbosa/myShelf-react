@@ -11,13 +11,3 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.p``;
-
-export const UserInfo = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  gap: 1.5rem;
-`;
-
-export const UserName = styled.p``;
