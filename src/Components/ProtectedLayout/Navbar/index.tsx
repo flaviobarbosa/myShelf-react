@@ -16,13 +16,13 @@ export const Navbar = ({ displayName, logout }: NavBarProps) => {
 
   return (
     <Container>
-      <Title className='text-4xl'>MyShelf</Title>
+      <Title className='text-4xl font-bold'>MyShelf</Title>
 
       <Avatar
         label={avatarLavel}
         shape="circle"
         size="large"
-        style={{ backgroundColor: '#fff', color: 'var(--primary-color)' }}
+        style={{ color: 'var(--primary-color)' }}
         onClick={(e) => op.current.toggle(e)} aria-controls="popup_menu" aria-haspopup />
 
       <OverlayPanel ref={op} id="overlay_panel" style={{minWidth: '8rem'}}>

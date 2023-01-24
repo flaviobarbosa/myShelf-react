@@ -7,7 +7,7 @@ export const Container = styled.div`
 
   height: 10%;
 
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
 `;
 
 export const Title = styled.p``;
