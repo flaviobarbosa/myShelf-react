@@ -2,8 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  width: 30rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  margin: 1rem;
+`;
+
+export const BookInfo = styled.div`
+  display: flex;
 `;
 
 export const BookCover = styled.img`
@@ -42,4 +46,36 @@ export const End = styled.span`
 
 export const Tags = styled.div`
   margin-top: 1rem;
+`;
+
+export const Actions = styled.div`
+  display: flex;
+ justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+`;
+
+export const Comment = styled.div`
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+export const Edit = styled.div`
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+export const Trash = styled.div`
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
