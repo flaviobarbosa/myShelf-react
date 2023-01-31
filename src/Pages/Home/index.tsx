@@ -1,5 +1,5 @@
 import { InputText } from 'primereact/inputtext';
-import { Container, SearchBar, SearchIcon } from './styles';
+import { Books, Container, SearchBar, SearchIcon } from './styles';
 import { books } from '../../mocks/books';
 import { Book } from '../../Components/Book';
 
@@ -12,10 +12,9 @@ export const Home = () => {
         <InputText />
       </SearchBar>
 
-      {
-        books.map(book => <Book key={book.isbn} {...book} />)
-      }
-
+      <Books>
+        { books.map(book => <Book key={book.isbn} {...book} />) }
+      </Books>
 
     </Container>
   );

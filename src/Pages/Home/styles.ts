@@ -17,3 +17,8 @@ export const SearchBar = styled.span`
 export const SearchIcon = styled.i`
   cursor: pointer;
 `;
+
+export const Books = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`;
