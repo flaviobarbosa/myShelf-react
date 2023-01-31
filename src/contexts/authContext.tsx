@@ -17,6 +17,7 @@ interface AuthContextProps {
   user: UserProps | null;
   signIn: (email: string, password: string) => Promise<void>;
   logout: () => void;
+  addComment: (id: number, comment: string) => void;
 }
 
 interface AuthProviderProps {
@@ -69,8 +70,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     localStorage.removeItem(LOCALSTORAGE_USER);
   };
 
+  const addComment = (id: number, comment: string) => {
+    alert('adding commnet to book id ' + id);
+  };
+
   return (
-    <AuthContext.Provider value={{ user, signIn, logout }}>
+    <AuthContext.Provider value={{ user, signIn, logout, addComment }}>
       {children}
     </AuthContext.Provider>
   );

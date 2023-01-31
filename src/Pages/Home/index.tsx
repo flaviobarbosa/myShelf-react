@@ -13,7 +13,7 @@ export const Home = () => {
       </SearchBar>
 
       <Books>
-        { books.map(book => <Book key={book.isbn} {...book} />) }
+        { books.map(book => <Book key={book.id} {...book} />) }
       </Books>
 
     </Container>

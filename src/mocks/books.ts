@@ -1,5 +1,6 @@
 export const books = [
   {
+    id: 1,
     isbn: '1585470910',
     cover: 'https://covers.openlibrary.org/b/id/4342210-L.jpg',
     title: 'Slow Joe',
@@ -11,6 +12,7 @@ export const books = [
     tags: ['tag1', 'tag2', 'tag3', 'tag1', 'tag2', 'tag3']
   },
   {
+    id: 2,
     isbn: '0451166892',
     cover: 'https://covers.openlibrary.org/b/id/11283979-L.jpg',
     title: 'The Pillars of the Earth',
@@ -22,6 +24,7 @@ export const books = [
     tags: ['tag1', 'tag4']
   },
   {
+    id: 3,
     isbn: '1585470910',
     cover: 'https://covers.openlibrary.org/b/id/4342210-L.jpg',
     title: 'Slow Joe',
@@ -33,6 +36,7 @@ export const books = [
     tags: ['tag1', 'tag2', 'tag3', 'tag1', 'tag2', 'tag3']
   },
   {
+    id: 4,
     isbn: '0451166892',
     cover: 'https://covers.openlibrary.org/b/id/11283979-L.jpg',
     title: 'The Pillars of the Earth',
