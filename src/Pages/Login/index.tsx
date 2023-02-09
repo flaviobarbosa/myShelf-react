@@ -43,7 +43,7 @@ export function Login() {
 
         <Button label="SIGN IN" type='submit' />
 
-        <Footer>Don't have an account? <span><Link to='/signup'>Sign up</Link></span>!</Footer>
+        <Footer>Don&apos;t have an account? <span><Link to='/signup'>Sign up</Link></span>!</Footer>
       </Form>
     </Container>
   );

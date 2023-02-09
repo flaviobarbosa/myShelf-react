@@ -6,6 +6,7 @@ import { ProtectedLayout } from '../../Components/ProtectedLayout';
 import { Home } from '../Home';
 import { PublicLayout } from '../../Components/PublicLayout';
 import { SignUp } from '../SignUp';
+import { BookDetail } from '../BookDetail';
 
 
 export const router = createBrowserRouter(
@@ -18,6 +19,7 @@ export const router = createBrowserRouter(
       </Route>
       <Route element={<ProtectedLayout />}>
         <Route path='/home' element={<Home />}></Route>
+        <Route path='/book/:bookId' element={<BookDetail />}></Route>
       </Route>
     </Route>
   )

@@ -5,9 +5,10 @@ export const PublicLayout = () => {
 
   const { user } = useAuth();
 
-  if (user) {
-    return <Navigate to="/home" />;
-  }
+  // if (user) {
+
+  //   return <Navigate to="/home" />;
+  // }
 
   return <Outlet />;
 };

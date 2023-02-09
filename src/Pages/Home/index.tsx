@@ -1,16 +1,13 @@
-import { InputText } from 'primereact/inputtext';
-import { Books, Container, SearchBar, SearchIcon } from './styles';
+import { Books, Container } from './styles';
 import { books } from '../../mocks/books';
 import { Book } from '../../Components/Book';
+import { SearchBar } from '../../Components/SearchBar';
 
 export const Home = () => {
 
   return (
     <Container>
-      <SearchBar className="p-input-icon-right">
-        <SearchIcon className="pi pi-search" onClick={alert.bind(this, 'dfsf')} />
-        <InputText />
-      </SearchBar>
+      <SearchBar />
 
       <Books>
         { books.map(book => <Book key={book.id} {...book} />) }

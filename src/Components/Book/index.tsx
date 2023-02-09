@@ -7,23 +7,14 @@ import { Button } from 'primereact/button';
 import { Actions, Authors, BookCover, BookDetails, BookInfo, Comment, Container, Dates, Edit, Pages, Start, Tags, Title, Trash } from './styles';
 import { useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
-
-interface BookProps {
-    id: number
-    cover: string;
-    title: string;
-    authors: string[];
-    pages: number;
-    startedAt: string;
-    endedAt: string | null;
-    stars: number;
-    tags: string[];
-}
+import { useNavigate } from 'react-router-dom';
+import { BookProps } from '../../types/books';
 
 export const Book = ({ id, cover, title, authors, pages, startedAt, endedAt, stars, tags }: BookProps) => {
   const [isCommentModalVisible, setIsCommentModalVisible] = useState<boolean>(false);
   const [newComment, setNewComment] = useState<string>('');
   const { addComment } = useAuth();
+  const navigate = useNavigate();
 
   const handleCloseModal = () => {
     setNewComment('');
@@ -47,18 +38,23 @@ export const Book = ({ id, cover, title, authors, pages, startedAt, endedAt, sta
   return (
     <Container>
       <BookInfo>
-        <BookCover src={cover} alt={title} />
+        <BookCover src={cover} alt={title} onClick={() => navigate(`/book/${id}`)} />
+
         <BookDetails>
-          <Title className='text-2xl font-semibold'>{title}</Title>
+          <Title className='text-2xl font-semibold' onClick={() => navigate(`/book/${id}`)}>{title}</Title>
+
           <Authors className='text-base'>{authors.join(', ')}</Authors>
+
           <Dates>
             <Pages className='text-base'>{pages} pages</Pages>
             <Start>{startedAt}</Start> {endedAt && `- ${endedAt}`}
           </Dates>
+
           <Rating value={stars} readOnly cancel={false} />
+
           <Tags>
             {
-              tags.map(tag => <Tag key={tag} value={tag} style={{marginRight: '0.25rem'}}></Tag>)
+              tags.map(tag => <Tag key={Math.random()} value={tag} style={{marginRight: '0.25rem'}}></Tag>)
             }
           </Tags>
         </BookDetails>

@@ -1,6 +1,7 @@
 import { Avatar } from 'primereact/avatar';
 import { OverlayPanel } from 'primereact/overlaypanel';
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Panel } from '../styles';
 import { Container, Title } from './styles';
 
@@ -11,12 +12,13 @@ interface NavBarProps {
 
 export const Navbar = ({ displayName, logout }: NavBarProps) => {
   const op = useRef(null);
+  const navigate = useNavigate();
 
   const avatarLavel = displayName.charAt(0).toUpperCase();
 
   return (
     <Container>
-      <Title className='text-4xl font-bold'>MyShelf</Title>
+      <Title className='text-4xl font-bold' onClick={() => navigate('/home')}>MyShelf</Title>
 
       <Avatar
         label={avatarLavel}

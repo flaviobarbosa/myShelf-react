@@ -14,6 +14,7 @@ export const BookCover = styled.img`
   width: 130px;
   height: 200px;
   margin-right: 1rem;
+  cursor: pointer;
 `;
 
 export const BookDetails = styled.div`
@@ -24,6 +25,7 @@ export const BookDetails = styled.div`
 
 export const Title = styled.p`
   margin-bottom: 0.5rem;
+  cursor: pointer;
 `;
 
 export const Authors = styled.p`

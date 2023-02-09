@@ -6,8 +6,8 @@ export const Container = styled.div`
   align-items: center;
 
   height: 10%;
-
-  /* padding: 0 1rem; */
 `;
 
-export const Title = styled.p``;
+export const Title = styled.p`
+  cursor: pointer;
+`;

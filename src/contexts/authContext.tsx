@@ -44,12 +44,13 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   };
 
   useEffect(() => {
+    console.debug('aqui');
     const persistedUser = getUser();
-
+    console.debug('persistedUser' + persistedUser);
     if(persistedUser && persistedUser !== JSON.stringify(user))
       setUser(JSON.parse(persistedUser));
 
-  }, [user]);
+  }, []);
 
   const signIn = async (email: string, password: string) => {
     api.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${firebaseApiKey}`, {
